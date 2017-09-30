@@ -10,7 +10,7 @@ class CommentList extends Component {
         comments : PropTypes.array.isRequired
     }
     render() {
-        console.log(this.props.comments)
+        if (!this.props.comments.length) return <div>No comments was added.</div>
         return (
             <ul>
                 {

@@ -17,7 +17,13 @@ class ArticleList extends Component {
         console.log('---', openArticleId)
     }*/
 
-    toggleArticle = (openArticleId) => () => this.setState({openArticleId})
+    toggleArticle = (openArticleId) => () => {
+        if (openArticleId !== this.state.openArticleId) {
+            this.setState({openArticleId})
+        } else {
+            this.setState({openArticleId:null})
+        }
+    }
 
     render() {
         const {articles} = this.props;
