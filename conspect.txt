@@ -1,0 +1,27 @@
+Компонент
+-- главный строительный блог реакт приложения
+
+-- самостоятельная часть приложения
+
+-- содержит часть логики
+
+-- описывает свой вид
+
+
+
+синтаксический сахар
+
+class Article extends Component {
+    /*constructor(props) {
+        super(props);
+        this.state = {
+            isOpen : true
+        }
+    }*/
+
+    state = {
+        isOpen : true
+    }
+
+    render(){}
+}
