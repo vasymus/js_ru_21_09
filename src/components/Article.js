@@ -1,12 +1,21 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types';
 
 class Article extends Component {
+    static PropTypes = {
+        article : PropTypes.shape({
+            title : PropTypes.string.isRequired,
+            text : PropTypes.string,
+            date : PropTypes.string.isRequired
+        }).isRequired
+    }
+
     state = {
         isOpen: true
     }
 
     render() {
-        const {article} = this.props
+        const {article, isOpen} = this.props
         const body = this.state.isOpen && <section>{article.text}</section>
         return (
             <div>
@@ -23,10 +32,10 @@ class Article extends Component {
     }
 
     handleClick = () => {
-        console.log('---', 'clicked')
         this.setState({
             isOpen: !this.state.isOpen
         })
+        console.log('---', this.state.isOpen);
     }
 }
 
